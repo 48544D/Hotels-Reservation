@@ -1,3 +1,14 @@
+<!--navbar css--->
+<link rel="stylesheet" href="../css/navbar.css">
+
+<!---fontawesome--->
+<script
+    src="https://kit.fontawesome.com/84ffe9b9c0.js"
+    crossorigin="anonymous"
+></script>
+
+
+<!---navbar--->
 <header>
     <div class="logo">
         <a href=""><p>Hotelz</p></a>
@@ -8,10 +19,7 @@
     </form>
     <div class="navigation">
         <ul>
-            <li><a href="">Hotels</a></li>
-            <li><a href="">Suggestions</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Social</a></li>
+            {{$slot}}
         </ul>
     </div>
 </header>
