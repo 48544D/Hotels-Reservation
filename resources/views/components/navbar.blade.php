@@ -11,7 +11,7 @@
 <!---navbar--->
 <header>
     <div class="logo">
-        <a href=""><p>Hotelz</p></a>
+        <a href="/"><p>Hotelz</p></a>
     </div>
     <form action="/search" method="GET" class="search-bar">
         <input type="text" placeholder="Search.." name="query" />
