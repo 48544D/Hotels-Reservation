@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Create hotel
 Route::get('/hotel/create', [HotelController::class, 'create']);
+
+
+// Add hotel to DB
+Route::post('/rooms', [HotelController::class, 'store']);

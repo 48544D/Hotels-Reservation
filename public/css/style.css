@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,200&display=swap');
 
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 /*---main---*/
 
 main {
@@ -9,7 +14,6 @@ main {
     top: 12vh;
     right: 0;
     left: 0;
-    height: calc(100% - 12vh);
 }
 
 /*---create hotel---*/
@@ -22,8 +26,10 @@ main {
 }
 
 .container {
-    position: absolute;
+    position: relative;
     top: 0;
+    bottom: 0;
+    height: 100%;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     background-color: rgb(249, 249, 249);
@@ -51,6 +57,10 @@ main {
     font-style: italic;
     font-size: 17px;
     margin: 0;
+}
+
+.container-body {
+    height: fit-content;
 }
 
 .container-body form {
@@ -87,7 +97,7 @@ main {
 }
 
 .container button[type="submit"] {
-    align-self: flex-start;
+    align-self: flex-end;
     color: white;
     border: none;
     border-radius: 5px;
@@ -95,5 +105,16 @@ main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #cc8c18;
     padding: 8px 15px;
-    margin: 10px 0 40px 0;
+    margin: 10px 0 0px 0;
+}
+
+.form-group i {
+    font-size: medium;
+}
+
+.text-error {
+    color: red;
+    align-self: flex-start;
+    margin-top: -5px;
+    font-family: 'Helvetica Neue', sans-serif;
 }
