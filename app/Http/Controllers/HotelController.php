@@ -9,25 +9,31 @@ use Illuminate\Validation\Rule;
 
 class HotelController extends Controller
 {
+    // Show all hotels
+    public function index()
+    {
+        return view('hotels.index', ['hotels' => Hotel::latest()->paginate(6)]);
+    }
+
+    // Create hotel page
     public function create() {
         return view('hotels.create');
     }
 
+    // Store the hotel
     public function store(Request $request)
     {
-        $formFields = $request->validate([
-            'name' => ['required', Rule::unique('Hotels', 'name')],
-            'email' => ['required', 'email'],
-            'city' => 'required',
-            'website' => 'required',
-            'logo' => 'required',
-            'description' => 'required',
-        ]);
+        $HotelInfo = [
+            'name' => $request->Hotelname,
+            'email' => $request->Hotelemail,
+            'city' => $request->Hotelcity,
+            'website' => $request->Hotelwebsite,
+            'logo' => $request->Hotellogo,
+            'description' => $request->Hoteldescription
+        ];
 
-        $formFields['logo'] = $request->file('logo')->store('hotels/logo', 'public');
+        Hotel::create($HotelInfo);
 
-        Hotel::create($formFields);
-
-        return view('rooms.add', ['HotelId' => DB::getPdo()->lastInsertId()]);
+        return redirect('/');
     }
 }

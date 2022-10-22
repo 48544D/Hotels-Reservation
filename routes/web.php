@@ -20,8 +20,14 @@ Route::get('/', function () {
 });
 
 // Create hotel
-Route::get('/hotel/create', [HotelController::class, 'create']);
+Route::get('/hotels/create', [HotelController::class, 'create']);
 
 
 // Add hotel to DB
-Route::post('/rooms', [HotelController::class, 'store']);
+Route::post('/hotels', [HotelController::class, 'store']);
+
+// Show all hotels
+Route::get('/hotels', [HotelController::class, 'index']);
+
+// Add room to hotel
+Route::post('/rooms/add', [RoomController::class, 'add']);

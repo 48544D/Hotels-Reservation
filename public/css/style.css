@@ -1,5 +1,5 @@
 /*---imports---*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,200&family=Raleway&display=swap');
 
 
 * {
@@ -16,8 +16,15 @@ main {
     left: 0;
 }
 
-/*---create hotel---*/
-.hotel-form {
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+}
+
+/*---submition form---*/
+.submit-form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +32,9 @@ main {
     width: 100%;
 }
 
-.container {
+
+/*---create hotel---*/
+.form-container {
     position: relative;
     top: 0;
     bottom: 0;
@@ -41,11 +50,11 @@ main {
     gap: 30px;
 }
 
-.container-header {
+.form-container-header {
     text-align: center;
 }
 
-.container-header h2 {
+.form-container-header h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 30px;
@@ -53,17 +62,17 @@ main {
     margin: 0;
 }
 
-.container-header p {
+.form-container-header p {
     font-style: italic;
     font-size: 17px;
     margin: 0;
 }
 
-.container-body {
+.form-container-body {
     height: fit-content;
 }
 
-.container-body form {
+.form-container-body form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,7 +105,7 @@ main {
     height: 150px;
 }
 
-.container button[type="submit"] {
+.form-container button[type="submit"] {
     align-self: flex-end;
     color: white;
     border: none;
@@ -106,6 +115,7 @@ main {
     background-color: #cc8c18;
     padding: 8px 15px;
     margin: 10px 0 0px 0;
+    cursor: pointer;
 }
 
 .form-group i {
@@ -117,4 +127,74 @@ main {
     align-self: flex-start;
     margin-top: -5px;
     font-family: 'Helvetica Neue', sans-serif;
+}
+
+/*---hotel index---*/
+.hotel-container {
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 1.5rem;
+    margin: 0 1rem;
+}
+
+.hotel-card {
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    background-color: rgb(249, 249, 249);
+    padding: 15px;
+    gap: 20px;
+}
+
+.hotel-card img {
+    width: 12rem;
+}
+
+.hotel-card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 10px;
+}
+
+.hotel-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.hotel-card-info h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.hotel-card-info h3 a {
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+.hotel-website a {
+    color: black;
+    font-size: 1.4rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hotel-city {
+    justify-self: flex-end;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 7px;
+    font-family: 'ubuntu',sans-serif;
 }

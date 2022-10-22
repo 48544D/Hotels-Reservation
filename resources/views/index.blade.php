@@ -9,10 +9,14 @@
 </head>
 <body>
     <x-navbar>
-      <li><a href="">Hotels</a></li>
+      <li><a href="/hotels">Hotels</a></li>
       <li><a href="">Suggestions</a></li>
       <li><a href="">About</a></li>
       <li><a href="">Social</a></li>
     </x-navbar>
+
+    <main>
+
+    </main>
 </body>
 </html>

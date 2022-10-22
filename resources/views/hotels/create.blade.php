@@ -14,17 +14,17 @@
 <body>
     <x-navbar></x-navbar>
     <main>
-        <div class="hotel-form">
-            <div class="container">
-                <div class="container-header">
+        <div class="submit-form">
+            <div class="form-container">
+                <div class="form-container-header">
                     <h2>
                         Create a Hotel
                     </h2>
                     <p>Add a hotel to find clients</p>
                 </div>
 
-                <div class="container-body">
-                    <form action="/rooms" method="post" enctype="multipart/form-data">
+                <div class="form-container-body">
+                    <form action="/rooms/add" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label
