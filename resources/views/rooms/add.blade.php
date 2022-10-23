@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="../css/style.css">
     <title>Rooms</title>
 </head>
@@ -30,7 +29,47 @@
                         <input type="hidden" name="Hotellogo" value="{{$logo}}">
                         <input type="hidden" name="Hoteldescription" value="{{$description}}">
 
-                        
+                        <div class="d-flex flex-column gap-2">
+                            <div class="room-select">
+                                <div class="form-check d-flex">
+                                  <label class="form-check-label me-auto">
+                                    <input type="checkbox" class="form-check-input" name="rooms[]" id="" value="standard">
+                                    <h5>Standard</h5>
+                                  </label>
+
+                                  <p class="m-0 me-2">
+                                      Enter Standard rooms number : 
+                                  </p>
+                                  <input class="w-25" type="number" min="1" name="standard-number">
+                                </div>
+                            </div>
+                            <div class="room-select">
+                                <div class="form-check d-flex">
+                                  <label class="form-check-label me-auto">
+                                    <input type="checkbox" class="form-check-input" name="rooms[]" id="" value="deluxe">
+                                    <h5>Deluxe</h5>
+                                  </label>
+
+                                  <p class="m-0 me-2">
+                                      Enter Deluxe rooms number : 
+                                  </p>
+                                  <input class="w-25" type="number" min="1" name="deluxe-number">
+                                </div>
+                            </div>
+                            <div class="room-select">
+                                <div class="form-check d-flex">
+                                  <label class="form-check-label me-auto">
+                                    <input type="checkbox" class="form-check-input" name="rooms[]" id="" value="vip">
+                                    <h5>VIP</h5>
+                                  </label>
+                                  
+                                  <p class="m-0 me-2">
+                                      Enter VIP rooms number : 
+                                  </p>
+                                  <input class="w-25" type="number" min="1" name="vip-number">
+                                </div>
+                            </div>
+                        </div>
 
                         <button type="submit">submit</button>
                     </form>

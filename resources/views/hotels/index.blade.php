@@ -15,7 +15,9 @@
             <div class="hotel-container">
                 @foreach ($hotels as $hotel)
                     <div class="hotel-card">
-                        <img src="{{asset('storage/' . $hotel->logo)}}" alt="">
+                        <div class="d-flex align-items-center">
+                            <img src="{{$hotel->logo ? asset('storage/' . $hotel->logo) : asset('storage/images/no-image.jpg')}}" alt="">
+                        </div>
 
                         <div class="hotel-card-info">
                             <div class="hotel-card-header">
@@ -26,7 +28,8 @@
                             </div>
 
                             <div class="hotel-city">
-                                <i class="fa-solid fa-location-dot"></i> {{$hotel->city}}
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>{{$hotel->city}}</p>
                             </div>
                         </div>
                     </div>
@@ -37,7 +40,7 @@
             <h2 style="font-family: 'ubuntu', sans-serif">No Hotels To Show</h2>
         </div>
         @endunless
-        <div>
+        <div class="p-4 d-flex justify-content-center">
             {{$hotels->links()}}
         </div>
     </main>
