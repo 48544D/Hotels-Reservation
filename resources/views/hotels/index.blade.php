@@ -16,7 +16,7 @@
                 @foreach ($hotels as $hotel)
                     <div class="hotel-card">
                         <div class="d-flex align-items-center">
-                            <img src="{{$hotel->logo ? asset('storage/' . $hotel->logo) : asset('storage/images/no-image.jpg')}}" alt="">
+                            <img src="{{$hotel->logo ? asset('storage/' . $hotel->logo) : asset('storage/images/no-image.jpg')}}">
                         </div>
 
                         <div class="hotel-card-info">

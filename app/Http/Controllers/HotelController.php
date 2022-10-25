@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hotel;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
@@ -33,6 +34,34 @@ class HotelController extends Controller
         ];
 
         Hotel::create($HotelInfo);
+
+        // $hotel_id = DB::getPdo()->lastInsertId();
+        $hotel_id = Hotel::latest()->first()['id'];
+
+        $rooms = $request->rooms;
+        foreach ($rooms as $room ) {
+            if ($room == "standard")
+            {
+                for ($i=0; $i < $request->standard_number; $i++) {
+                    Room::create(['hotel_id' => $hotel_id ,'type' => 'standard']);
+                }
+            }
+
+            if ($room == "deluxe")
+            {
+                for ($i = 0; $i < $request->deluxe_number; $i++) {
+                    Room::create(['hotel_id' => $hotel_id, 'type' => 'deluxe']);
+                }
+            }
+
+            if ($room == "vip")
+            {
+                for ($i = 0; $i < $request->vip_number; $i++) {
+                    Room::create(['hotel_id' => $hotel_id, 'type' => 'vip']);
+                }
+            }
+        }
+
 
         return redirect('/');
     }

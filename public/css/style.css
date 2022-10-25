@@ -86,7 +86,8 @@ main {
     align-items: center;
     gap: 10px;
 
-    margin: 0 90px;
+    margin: 0 60px;
+    padding:0 30px;
     width: 100%;
 }
 
@@ -112,7 +113,7 @@ main {
     border: none;
     border-radius: 5px;
     font-size: large;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Verdana, sans-serif;
     background-color: #cc8c18;
     padding: 8px 15px;
     margin: 10px 0 0px 0;

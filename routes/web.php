@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\HotelController;
-use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\HotelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Storage link
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});
+
 
 Route::get('/', function () {
     return view('index');
