@@ -38,3 +38,7 @@ Route::get('/hotels', [HotelController::class, 'index']);
 
 // Add room to hotel
 Route::post('/rooms/add', [RoomController::class, 'add']);
+
+// Get route for roooms
+Route::get('/rooms/add', [RoomController::class, 'check']);
+

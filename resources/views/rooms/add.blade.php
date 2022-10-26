@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/style.css">
+    
     <script src="../js/app.js"></script>
     <title>Rooms</title>
 </head>
@@ -23,12 +24,12 @@
                 <div class="form-container-body">
                     <form action="/hotels" method="post" enctype="multipart/form-data" onsubmit="return CheckboxesValidation();">
                         @csrf
-                        <input type="hidden" name="Hotelname" value="{{$name}}">
-                        <input type="hidden" name="Hotelemail" value="{{$email}}">
-                        <input type="hidden" name="Hotelcity" value="{{$city}}">
-                        <input type="hidden" name="Hotelwebsite" value="{{$website}}">
-                        <input type="hidden" name="Hotellogo" value="{{$logo}}">
-                        <input type="hidden" name="Hoteldescription" value="{{$description}}">
+                        <input type="hidden" name="name" value="{{$name}}">
+                        <input type="hidden" name="email" value="{{$email}}">
+                        <input type="hidden" name="city" value="{{$city}}">
+                        <input type="hidden" name="website" value="{{$website}}">
+                        <input type="hidden" name="logo" value="{{$logo}}">
+                        <input type="hidden" name="description" value="{{$description}}">
 
                         <div class="d-flex flex-column gap-2">
                             <div class="room-select">
@@ -42,7 +43,7 @@
                                       <p class="m-0 me-2" name="standard_number">
                                           Enter Standard rooms number : 
                                       </p>
-                                      <input class="w-25" type="number" min="1" name="standard_number" value="1">
+                                      <input class="w-25 border" type="number" min="1" name="standard_number" value="1">
                                   </div>
                                 </div>
                             </div>
@@ -58,7 +59,7 @@
                                       <p class="m-0 me-2" name="deluxe_number">
                                           Enter Deluxe rooms number : 
                                       </p>
-                                      <input class="w-25" type="number" min="1" name="deluxe_number" value="1">
+                                      <input class="w-25 border" type="number" min="1" name="deluxe_number" value="1">
                                   </div>
                                 </div>
                             </div>
@@ -73,7 +74,7 @@
                                       <p class="m-0 me-2" name="vip_number">
                                           Enter VIP rooms number : 
                                       </p>
-                                      <input class="w-25" type="number" min="1" name="vip_number" value="1">
+                                      <input class="w-25 border" type="number" min="1" name="vip_number" value="1">
                                   </div>
                                 </div>
                             </div>

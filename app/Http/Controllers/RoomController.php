@@ -24,4 +24,9 @@ class RoomController extends Controller
 
         return view('rooms.add', $hotelFields);
     }
+
+    public function check()
+    {
+        return redirect('/')->with('message', 'Hotel already created !');
+    }
 }

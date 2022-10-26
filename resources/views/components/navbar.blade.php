@@ -13,6 +13,19 @@
 <!---boostrap--->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 
+<script src="//unpkg.com/alpinejs" defer></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    yellow: "#cc8d18da",
+                },
+            },
+        },
+    };
+</script>
 
 <!---navbar--->
 <header>
@@ -21,7 +34,7 @@
     </div>
     <form action="/search" method="GET" class="search-bar">
         <input type="text" placeholder="Search.." name="query" />
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit"><i class="fa-solid fa-search"></i></button>
     </form>
     <div class="navigation">
         <ul>

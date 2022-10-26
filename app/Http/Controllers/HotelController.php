@@ -24,16 +24,25 @@ class HotelController extends Controller
     // Store the hotel
     public function store(Request $request)
     {
-        $HotelInfo = [
-            'name' => $request->Hotelname,
-            'email' => $request->Hotelemail,
-            'city' => $request->Hotelcity,
-            'website' => $request->Hotelwebsite,
-            'logo' => $request->Hotellogo,
-            'description' => $request->Hoteldescription
-        ];
+        // $HotelInfo = [
+        //     'name' => $request->Hotelname,
+        //     'email' => $request->Hotelemail,
+        //     'city' => $request->Hotelcity,
+        //     'website' => $request->Hotelwebsite,
+        //     'logo' => $request->Hotellogo,
+        //     'description' => $request->Hoteldescription
+        // ];
 
-        Hotel::create($HotelInfo);
+        $hotelFields = $request->validate([
+            'name' => ['required', Rule::unique('Hotels', 'name')],
+            'email' => ['required', 'email'],
+            'city' => 'required',
+            'website' => 'required',
+            'logo' => 'required',
+            'description' => 'required',
+        ]);
+
+        Hotel::create($hotelFields);
 
         // $hotel_id = DB::getPdo()->lastInsertId();
         $hotel_id = Hotel::latest()->first()['id'];
@@ -63,6 +72,6 @@ class HotelController extends Controller
         }
 
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Hotel created succesfully !');
     }
 }
