@@ -32,13 +32,12 @@
     <div class="logo">
         <a href="/">Hotelz</a>
     </div>
-    <form action="/search" method="GET" class="search-bar">
-        <input type="text" placeholder="Search.." name="query" />
-        <button type="submit"><i class="fa-solid fa-search"></i></button>
-    </form>
     <div class="navigation">
         <ul>
             {{$slot}}
         </ul>
+    </div>
+    <div class="login">
+        <a href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
     </div>
 </header>

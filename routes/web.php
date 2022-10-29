@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\HotelController;
+use App\Models\Hotel;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,14 +16,8 @@ use App\Http\Controllers\HotelController;
 |
 */
 
-// Storage link
-Route::get('/linkstorage', function () {
-    Artisan::call('storage:link');
-});
-
-
 Route::get('/', function () {
-    return view('index');
+    return view('index', ['hotels' => Hotel::latest()->paginate(6)]);
 });
 
 // Create hotel
