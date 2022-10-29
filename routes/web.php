@@ -17,7 +17,7 @@ use App\Models\Hotel;
 */
 
 Route::get('/', function () {
-    return view('index', ['hotels' => Hotel::latest()->paginate(6)]);
+    return view('index', ['hotels' => Hotel::latest()->filter(request(['search']))->paginate(6)]);
 });
 
 // Create hotel
@@ -35,4 +35,3 @@ Route::post('/rooms/add', [RoomController::class, 'add']);
 
 // Get route for roooms
 Route::get('/rooms/add', [RoomController::class, 'check']);
-
