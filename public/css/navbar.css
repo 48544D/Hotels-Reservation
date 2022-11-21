@@ -18,6 +18,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 50px;
 }
 
 
@@ -25,6 +26,7 @@ header {
 header .logo {
     font-size: 40px;
     font-family: 'Fuzzy Bubbles', cursive;
+    flex-grow: 2;
 
     margin-left: 30px;
 }
@@ -91,7 +93,6 @@ header .navigation {
 
 header .navigation ul {
     list-style: none;
-
     display: flex;
     flex-direction: row;
     align-items: center;
