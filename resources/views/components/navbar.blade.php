@@ -37,7 +37,25 @@
             {{$slot}}
         </ul>
     </div>
-    <div class="login">
-        <a href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-    </div>
+    @auth
+        <form class="login" action="/logout" method="POST">
+            @csrf
+            <div class="dropdown">
+                <i class="fa-solid fa-user dropbtn"></i>
+                <div class="dropdown-content">
+                    @client
+                        <a href="/dashboard">Dashboard</a>
+                    @endclient
+                    @admin
+                        <a href="/dashboard">Admin</a>
+                    @endadmin
+                    <button href="/logout">Logout</button>
+                </div>
+            </div>
+        </form>
+    @else
+        <div class="login">
+            <a href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+        </div>
+    @endauth
 </header>

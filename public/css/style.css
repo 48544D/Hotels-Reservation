@@ -186,6 +186,10 @@ main {
     text-decoration: none;
 }
 
+.hotel-card-info h3 a:hover {
+    text-decoration: underline;
+}
+
 
 .hotel-website a {
     color: black;
