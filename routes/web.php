@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\HotelController;
-use App\Http\Controllers\ReservationController;
-use App\Http\Controllers\UserController;
 use App\Models\Hotel;
 use App\Models\Reservation;
 use App\Models\User;
