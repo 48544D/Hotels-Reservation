@@ -9,7 +9,8 @@
 </head>
 <body>
     <x-navbar></x-navbar>
-    
+    <x-flash-message />
+
     <main>
         <x-hotels-cards :hotels="$hotels" />
     </main>

@@ -26,6 +26,7 @@
         },
     };
 </script>
+<script src="../js/app.js"></script>
 
 <!---navbar--->
 <header>

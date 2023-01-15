@@ -49,6 +49,28 @@ function displaySelectedInput() {
     }
 }
 
-onload = function() {
-    displaySelectedInput();
+function check() {
+    var people_number = document.getElementById("people_number");
+    var start_date = document.getElementById("start_date");
+    var end_date = document.getElementById("end_date");
+
+    people_number.style.border = "1px solid #ced4da";
+    start_date.style.border = "1px solid #ced4da";
+    end_date.style.border = "1px solid #ced4da";
+
+    if (parseInt(people_number.value) <= 0) {
+      people_number.style.border = "1px solid red";
+      //pop up message if number of rooms is zero or number of people is zero
+      alert("Number of people must be greater than zero");
+      return false;
+    }
+
+    if (start_date.value >= end_date.value) {
+      start_date.style.border = "1px solid red";
+      end_date.style.border = "1px solid red";
+      //pop up message if start date is after end date
+      alert("Start date must be before end date");
+      return false;
+    }
+    return true;
 }

@@ -21,10 +21,10 @@ class AdminMiddleware
             if (Auth::user()->role == '1') {
                 return $next($request);
             } else {
-                return redirect('/')->with('message', 'Action not allowed!');
+                return redirect('/')->with('message', 'You are a client!');
             }
         } else {
-            return redirect('/')->with('message', 'Action not allowed!');
+            return redirect('/')->with('message', 'You are a guest!');
         }
     }
 }

@@ -16,6 +16,12 @@ class HotelController extends Controller
         return view('hotels.index', ['hotels' => Hotel::latest()->paginate(6)]);
     }
 
+    // Show a single hotel
+    public function show(Hotel $hotel)
+    {
+        return view('hotels.show', ['hotel' => $hotel]);
+    }
+
     // Create hotel page
     public function create() {
         return view('hotels.create');
@@ -24,15 +30,6 @@ class HotelController extends Controller
     // Store the hotel
     public function store(Request $request)
     {
-        // $HotelInfo = [
-        //     'name' => $request->Hotelname,
-        //     'email' => $request->Hotelemail,
-        //     'city' => $request->Hotelcity,
-        //     'website' => $request->Hotelwebsite,
-        //     'logo' => $request->Hotellogo,
-        //     'description' => $request->Hoteldescription
-        // ];
-
         $hotelFields = $request->validate([
             'name' => ['required', Rule::unique('Hotels', 'name')],
             'email' => ['required', 'email'],

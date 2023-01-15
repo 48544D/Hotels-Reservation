@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/style.css">
-    
-    <title>Rooms</title>
+
+    <title>Choose rooms</title>
 </head>
 <body>
     <x-navbar></x-navbar>
     <x-flash-message />
+
+    <script>
+        onload = function() {
+            displaySelectedInput();
+        }
+    </script>
+
     <main>
         <div class="submit-form">
             <div class="form-container">
@@ -18,18 +25,17 @@
                     <h2>
                         Select Your Rooms
                     </h2>
-                    <p>Add rooms to the hotel</p>
+                    <p>Choose rooms to reserve</p>
                 </div>
 
                 <div class="form-container-body">
-                    <form action="/hotels" method="post" enctype="multipart/form-data" onsubmit="return CheckboxesValidation();">
+                    <form action="/reservations/create" method="post" onsubmit="return CheckboxesValidation();">
                         @csrf
-                        <input type="hidden" name="name" value="{{$name}}">
-                        <input type="hidden" name="email" value="{{$email}}">
-                        <input type="hidden" name="city" value="{{$city}}">
-                        <input type="hidden" name="website" value="{{$website}}">
-                        <input type="hidden" name="logo" value="{{$logo}}">
-                        <input type="hidden" name="description" value="{{$description}}">
+
+                        <input type="hidden" name="hotel_id" value="{{$hotel_id}}">
+                        <input type="hidden" name="people_number" value="{{$people_number}}">
+                        <input type="hidden" name="start_date" value="{{$start_date}}">
+                        <input type="hidden" name="end_date" value="{{$end_date}}">
 
                         <div class="d-flex flex-column gap-2">
                             <div class="room-select">

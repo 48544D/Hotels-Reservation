@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hotel;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -25,8 +27,22 @@ class RoomController extends Controller
         return view('rooms.add', $hotelFields);
     }
 
+    // Function to avoid recreating a hotel
     public function check()
     {
         return redirect('/')->with('message', 'Hotel already created !');
+    }
+
+    // Choose room for reservation
+    public function choose(Request $request)
+    {
+        $formFields = $request->validate([
+            'hotel_id' => 'required',
+            'people_number' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required'
+        ]);
+
+        return view('rooms.choose', $formFields);
     }
 }

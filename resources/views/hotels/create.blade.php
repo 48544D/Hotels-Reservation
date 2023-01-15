@@ -19,6 +19,8 @@
 </head>
 <body>
     <x-navbar></x-navbar>
+    <x-flash-message />
+    
     <main>
         <div class="submit-form">
             <div class="form-container">

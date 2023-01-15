@@ -15,4 +15,10 @@ class Room extends Model
     public function hotels() {
         return $this->belongsTo(Hotel::class, 'hotel_id');
     }
+
+    // Relation to reservation
+    public function reservations()
+    {
+        return $this->hasOne(Reservation::class, 'room_id');
+    }
 }
