@@ -38,6 +38,7 @@
                         <input type="hidden" name="end_date" value="{{$end_date}}">
 
                         <div class="d-flex flex-column gap-2">
+                            @unless ($standard_rooms == 0)
                             <div class="room-select">
                                 <div class="form-check d-flex flex-column">
                                   <label class="form-check-label">
@@ -46,13 +47,16 @@
                                   </label>
 
                                   <div class="d-flex align-self-center">
-                                      <p class="m-0 me-2" name="standard_number">
+                                      <label class="m-0 me-2" name="standard_number">
                                           Enter Standard rooms number : 
-                                      </p>
-                                      <input class="w-25 border" type="number" min="1" name="standard_number" value="1">
+                                      </label>
+                                      <input class="border form-control-sm" type="number" min="1" max="{{$standard_rooms}}" name="standard_number" value="1">
                                   </div>
                                 </div>
                             </div>
+                            @endunless
+
+                            @unless ($deluxe_rooms == 0)
                             <div class="room-select">
                                 <div class="form-check d-flex flex-column">
                                   <label class="form-check-label me-auto">
@@ -65,10 +69,13 @@
                                       <p class="m-0 me-2" name="deluxe_number">
                                           Enter Deluxe rooms number : 
                                       </p>
-                                      <input class="w-25 border" type="number" min="1" name="deluxe_number" value="1">
+                                      <input class="border form-control-sm" type="number" min="1" max="{{$deluxe_rooms}}" name="deluxe_number" value="1">
                                   </div>
                                 </div>
                             </div>
+                            @endunless
+
+                            @unless ($vip_rooms == 0)
                             <div class="room-select">
                                 <div class="form-check d-flex flex-column">
                                   <label class="form-check-label me-auto">
@@ -80,11 +87,12 @@
                                       <p class="m-0 me-2" name="vip_number">
                                           Enter VIP rooms number : 
                                       </p>
-                                      <input class="w-25 border" type="number" min="1" name="vip_number" value="1">
+                                      <input class="border form-control-sm" type="number" min="1" max="{{$vip_rooms}}" name="vip_number" value="1">
                                   </div>
                                 </div>
                             </div>
                         </div>
+                        @endunless
 
                         <button type="submit">submit</button>
                     </form>
