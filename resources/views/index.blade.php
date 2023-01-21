@@ -11,8 +11,8 @@
     <x-navbar>
       <li><a href="/#hotels">Hotels</a></li>
       <li><a href="#">Suggestions</a></li>
-      <li><a href="#">Social</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="#social">Social</a></li>
+      <li><a href="#contact">Contact</a></li>
     </x-navbar>
 
     <x-flash-message />
