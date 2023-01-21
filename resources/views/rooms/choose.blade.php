@@ -21,6 +21,7 @@
     <main>
         <div class="submit-form">
             <div class="form-container">
+                @unless ($standard_rooms == 0 || $deluxe_rooms == 0 || $vip_rooms == 0)
                 <div class="form-container-header">
                     <h2>
                         Select Your Rooms
@@ -29,6 +30,7 @@
                 </div>
 
                 <div class="form-container-body">
+                    
                     <form action="/reservations/create" method="post" onsubmit="return CheckboxesValidation();">
                         @csrf
 
@@ -91,12 +93,15 @@
                                   </div>
                                 </div>
                             </div>
+                            @endunless
                         </div>
-                        @endunless
 
                         <button type="submit">submit</button>
                     </form>
                 </div>
+                @else
+                    <h3 class="text-center">No rooms available</h3>
+                @endunless
             </div>
         </div>
     </main>
