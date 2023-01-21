@@ -1,11 +1,12 @@
 <?php
 
+use App\Models\User;
+use App\Models\Hotel;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\HotelController;
-use App\Models\Hotel;
-use App\Models\Reservation;
-use App\Models\User;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('index', ['hotels' => Hotel::latest()->filter(request(['search']))->paginate(6)]);
-});
+})->name('home');
 
 // Hotels
 Route::prefix('hotels')->controller(HotelController::class)->group(function() {
