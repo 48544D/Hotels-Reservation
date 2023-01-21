@@ -23,6 +23,7 @@ class RoomController extends Controller
             'description' => 'required',
         ]);
 
+        // store the logo in the public folder
         $hotelFields['logo'] = $request->file('logo')->store('hotels/logo', 'public');
 
         return view('rooms.add', $hotelFields);

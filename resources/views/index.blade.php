@@ -15,8 +15,6 @@
       <li><a href="#contact">Contact</a></li>
     </x-navbar>
 
-    <x-flash-message />
-
     <main>
         <section class="home" id="home">
           <div class="container">

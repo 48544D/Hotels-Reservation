@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3124c885f04112b01b9a126a754bf330",
+    "content-hash": "04b86b3912d684ea8f96c99879d4bbfd",
     "packages": [
         {
             "name": "brick/math",
@@ -61,6 +61,68 @@
                 }
             ],
             "time": "2022-08-10T22:54:19+00:00"
+        },
+        {
+            "name": "crewlabs/unsplash",
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unsplash/unsplash-php.git",
+                "reference": "cdb174beaf62d187db1a777cf5fb11ee554d85cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unsplash/unsplash-php/zipball/cdb174beaf62d187db1a777cf5fb11ee554d85cf",
+                "reference": "cdb174beaf62d187db1a777cf5fb11ee554d85cf",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3.0|^7.0",
+                "hughbertd/oauth2-unsplash": ">=1.0.3",
+                "league/oauth2-client": ">=1.4.2",
+                "php": ">=7.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~1.4.0",
+                "php-vcr/php-vcr": "~1.4",
+                "php-vcr/phpunit-testlistener-vcr": "~3.1",
+                "phpunit/phpunit": "~9.0",
+                "vlucas/phpdotenv": "~4.1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Unsplash\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Klaassen",
+                    "email": "aaron@unsplash.com"
+                },
+                {
+                    "name": "Luke Chesser",
+                    "email": "luke@unsplash.com"
+                },
+                {
+                    "name": "Charles Lalonde",
+                    "email": "charles@pickcrew.com"
+                },
+                {
+                    "name": "Hugh Downer",
+                    "email": "hugh.downer@gmail.com"
+                }
+            ],
+            "description": "Wrapper to access the Unsplash API and photo library",
+            "support": {
+                "issues": "https://github.com/unsplash/unsplash-php/issues",
+                "source": "https://github.com/unsplash/unsplash-php/tree/3.2.1"
+            },
+            "time": "2022-01-17T20:32:58+00:00"
         },
         {
             "name": "dflydev/dot-access-data",

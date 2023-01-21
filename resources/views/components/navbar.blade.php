@@ -60,3 +60,5 @@
         </div>
     @endauth
 </header>
+
+<x-flash-message />
