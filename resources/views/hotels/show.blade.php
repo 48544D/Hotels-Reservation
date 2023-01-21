@@ -9,6 +9,7 @@
 </head>
 <body>
     <x-navbar />
+    
     <x-flash-message />
 
     <main>

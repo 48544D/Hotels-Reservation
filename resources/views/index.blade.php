@@ -9,10 +9,10 @@
 </head>
 <body>
     <x-navbar>
-      <li><a href="/hotels">Hotels</a></li>
-      <li><a href="">Suggestions</a></li>
-      <li><a href="">Social</a></li>
-      <li><a href="">About</a></li>
+      <li><a href="/#hotels">Hotels</a></li>
+      <li><a href="#">Suggestions</a></li>
+      <li><a href="#">Social</a></li>
+      <li><a href="#">About</a></li>
     </x-navbar>
 
     <x-flash-message />
@@ -25,7 +25,9 @@
           </div>
         </section>
         
-        @include('partials._search')
+        <div id="hotels">
+          @include('partials._search')
+        </div>
 
         <x-hotels-cards :hotels="$hotels" />
 
