@@ -103,6 +103,27 @@ class UserController extends Controller
         return redirect('/dashboard')->with('message', 'Profile updated!');
     }
 
+    // change password
+    public function changePassword()
+    {
+        return view('users.changePassword');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $formFields = $request->validate([
+            'password' => 'required|confirmed|min:3',
+        ]);
+
+        //Hash the password
+        $formFields['password'] = bcrypt($formFields['password']);
+
+        //Update user
+        $user = User::where('id', Auth::user()->id)->update($formFields);
+
+        return redirect('/dashboard')->with('message', 'Password updated!');
+    }
+
     // Dashboard admin
     public function adminDashboard()
     {

@@ -345,7 +345,7 @@ footer .flex2 {
 /*------------footer------------*/
 
 /*------------dashboard------------*/
-.account {
+.account, .passwordChange {
     padding: 15px 70px;
     display: flex;
     flex-direction: column;
@@ -353,21 +353,21 @@ footer .flex2 {
     gap: 30px;
 }
 
-.account-info {
+.account-info, .passwordChange-info {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-.account-info form label {
+.account-info form label, .passwordChange-info form label {
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 3px;
     color: #413b3b;
 }
 
-.account-info form {
+.account-info form, .passwordChange-info form {
     display: flex;
     flex-direction: column;
     width: 55%;
@@ -393,4 +393,30 @@ footer .flex2 {
     padding: 10px 15px;
     border-radius: 30px;
     gap: 10px;
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    border: 0 !important;
+}
+
+.nav-tabs .nav-link {
+    border: 0 !important;
+    /* border: 2px solid #CC8C18 !important; */
+    color: #CC8C18 !important;
+    font-weight: 500 !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 2px !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: #CC8C18 !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 2px !important;
 }
