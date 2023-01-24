@@ -77,4 +77,16 @@ class UserController extends Controller
 
         return redirect('/')->with('message', 'You have been Logged out!');
     }
+
+    // Dashboard client
+    public function dashboard()
+    {
+        return view('users.dashboard');
+    }
+
+    // Dashboard admin
+    public function adminDashboard()
+    {
+        return view('users.adminDashboard');
+    }
 }

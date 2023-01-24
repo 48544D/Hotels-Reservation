@@ -68,6 +68,12 @@ Route::controller(UserController::class)->group(function () {
 
     // Logout the user
     Route::post('/logout', 'logout')->middleware('auth');
+
+    // Dashboard client
+    Route::get('/dashboard', 'dashboard')->middleware('client');
+
+    // Dashboard admin
+    Route::get('/adminDashboard', 'adminDashboard')->middleware('admin');
 });
 
 // Reservation

@@ -48,7 +48,7 @@
                         <a href="/dashboard">Dashboard</a>
                     @endclient
                     @admin
-                        <a href="/dashboard">Admin</a>
+                        <a href="/adminDashboard">Admin</a>
                     @endadmin
                     <button href="/logout">Logout</button>
                 </div>
