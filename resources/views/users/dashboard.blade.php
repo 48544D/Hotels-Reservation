@@ -102,10 +102,10 @@
                             <input
                                 placeholder="Confirm Password.."
                                 type="password"
-                                name="password2"
+                                name="password_confirmation"
                                 required
                             />
-                            @error('password2')
+                            @error('password_confirmation')
                                 <p class="text-error
                                 ">{{ $message }}</p>
                             @enderror
