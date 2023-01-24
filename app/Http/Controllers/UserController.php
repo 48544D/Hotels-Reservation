@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -82,6 +83,24 @@ class UserController extends Controller
     public function dashboard()
     {
         return view('users.dashboard');
+    }
+
+    public function update(Request $request)
+    {
+        $formFields = $request->validate([
+            'name' => ['required', 'min:3', Rule::unique('users', 'name')->ignore(Auth::user()->id)],
+            'email' => ['required', 'email', Rule::unique('users', 'email')->ignore(Auth::user()->id)],
+        ]);
+
+        // check if password is correct
+        if (!Hash::check($request->pass, Auth::user()->password)) {
+            return back()->withErrors(['pass' => 'Invalid password'])->onlyInput('pass');
+        }
+
+        //Update user
+        $user = User::where('id', Auth::user()->id)->update($formFields);
+
+        return redirect('/dashboard')->with('message', 'Profile updated!');
     }
 
     // Dashboard admin

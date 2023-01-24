@@ -74,6 +74,12 @@ Route::controller(UserController::class)->group(function () {
 
     // Dashboard admin
     Route::get('/adminDashboard', 'adminDashboard')->middleware('admin');
+
+    // update user
+    Route::post('/update', 'update')->middleware('client');
+
+    // change password
+    Route::post('/changePassword', 'changePassword')->middleware('client');
 });
 
 // Reservation
