@@ -52,22 +52,19 @@ class RoomController extends Controller
         $standardReservedRooms = Reservation::join('rooms', 'reservations.room_id', '=', 'rooms.id')
             ->where('rooms.type', 'standard')
             ->where('rooms.hotel_id', $formFields['hotel_id'])
-            ->where('reservations.start_date', '<=', $formFields['start_date'])
-            ->where('reservations.end_date', '>=', $formFields['end_date'])
+            ->where('reservations.end_date', '>', $formFields['start_date'])
             ->count();
 
         $deluxeReservedRooms = Reservation::join('rooms', 'reservations.room_id', '=', 'rooms.id')
             ->where('rooms.type', 'deluxe')
             ->where('rooms.hotel_id', $formFields['hotel_id'])
-            ->where('reservations.start_date', '<=', $formFields['start_date'])
-            ->where('reservations.end_date', '>=', $formFields['end_date'])
+            ->where('reservations.end_date', '>', $formFields['start_date'])
             ->count();
 
         $vipReservedRooms = Reservation::join('rooms', 'reservations.room_id', '=', 'rooms.id')
             ->where('rooms.type', 'vip')
             ->where('rooms.hotel_id', $formFields['hotel_id'])
-            ->where('reservations.start_date', '<=', $formFields['start_date'])
-            ->where('reservations.end_date', '>=', $formFields['end_date'])
+            ->where('reservations.end_date', '>', $formFields['start_date'])
             ->count();
 
         // The hotel rooms that are available
