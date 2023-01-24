@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -104,16 +106,21 @@ class UserController extends Controller
     }
 
     // change password
-    public function changePassword()
-    {
-        return view('users.changePassword');
-    }
-
     public function updatePassword(Request $request)
     {
+        Session::flash('tab', 'password');
         $formFields = $request->validate([
+            'oldPass' => 'required',
             'password' => 'required|confirmed|min:3',
         ]);
+
+        // check if password is correct
+        if (!Hash::check($request->oldPass, Auth::user()->password)) {
+            return back()->withErrors(['oldPass' => 'Invalid password'])->onlyInput('oldPass');
+        }
+
+        // remove old password
+        unset($formFields['oldPass']);
 
         //Hash the password
         $formFields['password'] = bcrypt($formFields['password']);
@@ -121,7 +128,7 @@ class UserController extends Controller
         //Update user
         $user = User::where('id', Auth::user()->id)->update($formFields);
 
-        return redirect('/dashboard')->with('message', 'Password updated!');
+        return redirect('/dashboard')->with('message' , 'Password updated!');
     }
 
     // Dashboard admin

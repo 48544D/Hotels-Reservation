@@ -385,7 +385,7 @@ footer .flex2 {
     margin-bottom: 10px;
 }
 
-.account-info input[type="submit"] {
+.account-info input[type="submit"], .passwordChange-info input[type="submit"] {
     background: #CC8C18;
     width: 20%;
     align-self: center;

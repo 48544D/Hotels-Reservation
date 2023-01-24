@@ -79,7 +79,7 @@ Route::controller(UserController::class)->group(function () {
     Route::post('/update', 'update')->middleware('client');
 
     // change password
-    Route::post('/changePassword', 'changePassword')->middleware('client');
+    Route::post('/updatePassword', 'updatePassword')->middleware('client');
 });
 
 // Reservation

@@ -13,16 +13,16 @@
     <main>
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" href="#account" role="tab" data-toggle="tab">Account</a>
+                <a class="nav-link {{ session('tab') != 'password' ? ' active' : null }}" href="#account" role="tab" data-toggle="tab">Account</a>
             </li>
             |
             <li class="nav-item">
-                <a class="nav-link" href="#password" role="tab" data-toggle="tab">Change password</a>
+                <a class="nav-link {{ session('tab') == 'password' ? ' active' : null }}" href="#password" role="tab" data-toggle="tab">Change password</a>
             </li>
         </ul>
 
         <div class="tab-content">
-            <div class="tab-pane fade show active" id="account" role="tabpanel">
+            <div class="tab-pane fade {{ session('tab') != 'password' ? ' show active' : null }}" id="account" role="tabpanel">
                 <div class="account">
                     <h2>Manage Your Account</h2>
                     <div class="account-info">
@@ -68,11 +68,11 @@
                 </div>
             </div>
 
-            <div class="tab-pane fade" id="password" role="tabpanel">
+            <div class="tab-pane fade {{ session('tab') == 'password' ? ' show active' : null }}" id="password" role="tabpanel">
                 <div class="passwordChange">
                     <h2>Change Your Password</h2>
                     <div class="passwordChange-info">
-                        <form method="POST" action="/update">
+                        <form method="POST" action="/updatePassword">
                             @csrf
                             <label>Old Password</label>
                             <input
@@ -109,6 +109,8 @@
                                 <p class="text-error
                                 ">{{ $message }}</p>
                             @enderror
+
+                            <input type="submit" value="Save" />
                         </form>
                     </div>
                 </div>
