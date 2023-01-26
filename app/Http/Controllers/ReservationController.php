@@ -6,6 +6,7 @@ use App\Models\Room;
 use App\Models\Hotel;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ReservationController extends Controller
 {
@@ -114,6 +115,7 @@ class ReservationController extends Controller
     // edit a reservation
     public function edit(Request $request)
     {
+        Session::flash('tab', 'reservation');
         $formFields = $request->validate([
             'id' => 'required',
             'people_number' => 'required',
@@ -126,6 +128,6 @@ class ReservationController extends Controller
             'end_date' => $formFields['end_date']
         ]);
 
-        return redirect('/dashboard#client-reservations')->with('message', 'Reservation edited successfully');
+        return redirect('/dashboard')->with('message', 'Reservation edited successfully');
     }
 }
