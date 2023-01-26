@@ -13,7 +13,7 @@
     <main>
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link {{ session('tab') != 'password' ? ' active' : null }}" href="#account" role="tab" data-toggle="tab">Account</a>
+                <a class="nav-link {{ session('tab') != 'password' || session('tab') == 'account' ? ' active' : null }}" href="#account" role="tab" data-toggle="tab">Account</a>
             </li>
             |
             <li class="nav-item">
@@ -22,7 +22,7 @@
         </ul>
 
         <div class="tab-content">
-            <div class="tab-pane fade {{ session('tab') != 'password' ? ' show active' : null }}" id="account" role="tabpanel">
+            <div class="tab-pane fade {{ session('tab') != 'password' || session('tab') == 'account' ? ' show active' : null }}" id="account" role="tabpanel">
                 <div class="account">
                     <h2>Manage Your Account</h2>
                     <div class="account-info">
@@ -116,6 +116,8 @@
                 </div>
             </div>
         </div>
+
+        
     </main>
 
     <script>
