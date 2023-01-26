@@ -86,4 +86,7 @@ Route::controller(UserController::class)->group(function () {
 Route::prefix('reservations')->controller(ReservationController::class)->group(function () {
     // create a reservation
     Route::post('/create', 'create')->middleware('client');
+
+    // delete a reservation
+    Route::post('/delete', 'delete')->middleware('client');
 });

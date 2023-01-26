@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Room;
 use App\Models\User;
+use App\Models\Hotel;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -84,7 +87,14 @@ class UserController extends Controller
     // Dashboard client
     public function dashboard()
     {
-        return view('users.dashboard');
+        // selecting all the reservations of the user
+        $reservations = Reservation::where('client_id', Auth::user()->id)->get();
+
+        foreach ($reservations as $reservation) {
+            $reservation->room = Room::where('id', $reservation->room_id)->first();
+            $reservation->hotel = Hotel::where('id', $reservation->room->hotel_id)->first();
+        }
+        return view('users.dashboard', compact('reservations'));
     }
 
     public function update(Request $request)

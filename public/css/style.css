@@ -344,8 +344,13 @@ footer .flex2 {
 
 /*------------footer------------*/
 
-/*------------dashboard------------*/
-.account, .passwordChange {
+/*------------dashboard client------------*/
+.credentials {
+    /* height: 100vh; */
+    padding: 10px 0;    
+}
+
+.account, .passwordChange, .client-reservations {
     padding: 15px 70px;
     display: flex;
     flex-direction: column;
@@ -393,6 +398,22 @@ footer .flex2 {
     padding: 10px 15px;
     border-radius: 30px;
     gap: 10px;
+}
+
+.client-reservations-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-reservations-info table {
+    width: 90%;
+}
+
+.client-reservations h3 {
+    text-align: center;
+    color: #82807f;
+    margin-bottom: 50px;
 }
 
 .nav-tabs {

@@ -90,4 +90,16 @@ class ReservationController extends Controller
 
         return redirect()->route('home')->with('message', 'Reservation created successfully');
     }
+
+    // delete a reservation
+    public function delete(Request $request)
+    {
+        $formFields = $request->validate([
+            'id' => 'required'
+        ]);
+
+        Reservation::where('id', $formFields['id'])->delete();
+
+        return redirect()->back()->with('message', 'Reservation deleted successfully');
+    }
 }
