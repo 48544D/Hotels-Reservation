@@ -441,3 +441,47 @@ footer .flex2 {
     font-size: 1.2rem !important;
     letter-spacing: 2px !important;
 }
+
+/*------------dashboard client------------*/
+
+/*------------Reservation------------*/
+.editReservation {
+    padding: 15px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.editReservation-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.editReservation-info form label {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #413b3b;
+}
+
+.editReservation-info form {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.editReservation-info input[type="submit"] {
+    background: #CC8C18;
+    width: 20%;
+    align-self: center;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    gap: 10px;
+}

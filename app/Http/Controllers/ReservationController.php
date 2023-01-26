@@ -102,4 +102,30 @@ class ReservationController extends Controller
 
         return redirect()->back()->with('message', 'Reservation deleted successfully');
     }
+
+    // edit reservation page
+    public function editPage(Reservation $reservation)
+    {
+        return view('reservations.edit', [
+            'reservation' => $reservation
+        ]);
+    }
+
+    // edit a reservation
+    public function edit(Request $request)
+    {
+        $formFields = $request->validate([
+            'id' => 'required',
+            'people_number' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required'
+        ]);
+
+        Reservation::where('id', $formFields['id'])->update([
+            'start_date' => $formFields['start_date'],
+            'end_date' => $formFields['end_date']
+        ]);
+
+        return redirect('/dashboard#client-reservations')->with('message', 'Reservation edited successfully');
+    }
 }

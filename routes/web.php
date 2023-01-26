@@ -89,4 +89,10 @@ Route::prefix('reservations')->controller(ReservationController::class)->group(f
 
     // delete a reservation
     Route::post('/delete', 'delete')->middleware('client');
+
+    // edit reservation page
+    Route::get('/edit/{reservation}', 'editPage')->middleware('client');
+
+    // edit a reservation
+    Route::post('/edit', 'edit')->middleware('client');
 });

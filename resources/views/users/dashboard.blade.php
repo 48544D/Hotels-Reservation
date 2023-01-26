@@ -119,7 +119,7 @@
             </div>
         </div>
 
-        <div class="client-reservations">
+        <div class="client-reservations" id="client-reservations">
             <h2>Your Reservations</h2>
             @unless (count($reservations))
                 <h3>You have no reservations</h3>
@@ -142,7 +142,8 @@
                                 <td>{{ $reservation->room->type }}</td>
                                 <td>{{ $reservation->start_date }}</td>
                                 <td>{{ $reservation->end_date }}</td>
-                                <td class="text-center">
+                                <td class="d-flex justify-content-center gap-2">
+                                    <a href="/reservations/edit/{{ $reservation->id }}" class="btn btn-primary">Edit</a>
                                     <form action="/reservations/delete" method="post" onsubmit="return confirm('Do you really want to delete this reservation ?')">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $reservation->id }}">

@@ -1,5 +1,5 @@
 <!--navbar css--->
-<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="/css/navbar.css">
 
 <!---fontawesome--->
 <link
@@ -33,7 +33,7 @@
         },
     };
 </script>
-<script src="../js/app.js"></script>
+<script src="/js/app.js"></script>
 
 <!---navbar--->
 <header>
