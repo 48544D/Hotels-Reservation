@@ -30,13 +30,7 @@ class UserController extends Controller
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
 
-            if (Auth::user()->role == '0') {
-                // return redirect('/user/home')->with('message', 'Logged in!');
-                return redirect('/')->with('message', 'Logged in!');
-            } elseif (Auth::user()->role == '1') {
-                // return redirect('/admin/home')->with('message', 'Logged in!');
-                return redirect('/')->with('message', 'Logged in!');
-            }
+            return redirect('/')->with('message', 'Logged in!');
         }
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
@@ -138,7 +132,7 @@ class UserController extends Controller
         //Update user
         $user = User::where('id', Auth::user()->id)->update($formFields);
 
-        return redirect('/dashboard')->with('message' , 'Password updated!');
+        return redirect('/dashboard')->with('message', 'Password updated!');
     }
 
     // Dashboard admin

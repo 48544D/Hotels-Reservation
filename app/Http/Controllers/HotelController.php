@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Hotel;
 use App\Models\Room;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
 class HotelController extends Controller
